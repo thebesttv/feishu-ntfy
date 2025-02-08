@@ -1,0 +1,25 @@
+name: Test ntfy
+
+permissions:
+  contents: read
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  ntfy-test:
+    runs-on: ubuntu-latest
+    name: Test ntfy
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Generate script
+        run: |
+          make clean
+          make
+      - name: Send notification
+        env:
+          NTFY_URL: ${{ secrets.NTFY_URL }}
+        run: |
+          ./ntfy echo GA test success!

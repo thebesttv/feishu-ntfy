@@ -1,0 +1,14 @@
+#+title: 飞书 ntfy
+#+date: <2024-08-14 Wed 19:23>
+#+author: thebesttv
+
+参考 [[https://github.com/tespent/task-notify][task-notify]]
+
+** 使用
+
+把飞书 Webhook 机器人的 URL 保存在环境变量 =NTFY_URL= 中。
+
+** 消息卡片
+
+使用[[https://open.feishu.cn/cardkit][飞书卡片搭建工具]]构建卡片，然后复制源代码到 =CARD= 。
+- 注意相关变量需要在 =data= 中加入
